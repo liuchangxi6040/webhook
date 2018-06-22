@@ -42,7 +42,7 @@ var cfg Config
 
 func runScript(item *WatchItem) (err error) {
 	script := item.Script
-	out, err := exec.Command("bash", "-c", script).Output()
+	out, err := exec.Command("bash", "-x", script).Output()
 	if err != nil {
 		log.Printf("Exec command failed: %s\n", err)
 	}
